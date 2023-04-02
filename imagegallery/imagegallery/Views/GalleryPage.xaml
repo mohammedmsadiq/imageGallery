@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="Red"
+    BackgroundColor="{StaticResource PrimaryBackground}"
     x:Class="imagegallery.Views.GalleryPage">
     <ContentPage.Content>
     </ContentPage.Content>

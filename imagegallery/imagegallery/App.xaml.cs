@@ -7,6 +7,25 @@ using Prism.Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("Lato-Thin.ttf", Alias = "Thin")]
+[assembly: ExportFont("Lato-ThinItalic.ttf", Alias = "ThinItalic")]
+[assembly: ExportFont("Lato-SemiboldItalic.ttf", Alias = "SemiboldItalic")]
+[assembly: ExportFont("Lato-Semibold.ttf", Alias = "Semibold")]
+[assembly: ExportFont("Lato-Regular.ttf", Alias = "Regular")]
+[assembly: ExportFont("Lato-MediumItalic.ttf", Alias = "MediumItalic")]
+[assembly: ExportFont("Lato-Medium.ttf", Alias = "Medium")]
+[assembly: ExportFont("Lato-LightItalic.ttf", Alias = "LightItalic")]
+[assembly: ExportFont("Lato-Light.ttf", Alias = "Light")]
+[assembly: ExportFont("Lato-Italic.ttf", Alias = "Italic")]
+[assembly: ExportFont("Lato-HeavyItalic.ttf", Alias = "HeavyItalic")]
+[assembly: ExportFont("Lato-Heavy.ttf", Alias = "Heavy")]
+[assembly: ExportFont("Lato-HairlineItalic.ttf", Alias = "HairlineItalic")]
+[assembly: ExportFont("Lato-Hairline.ttf", Alias = "Hairline")]
+[assembly: ExportFont("Lato-BoldItalic.ttf", Alias = "BoldItalic")]
+[assembly: ExportFont("Lato-Bold.ttf", Alias = "Bold")]
+[assembly: ExportFont("Lato-BlackItalic.ttf", Alias = "BlackItalic")]
+[assembly: ExportFont("Lato-Black.ttf", Alias = "Black")]
+
 namespace imagegallery
 {
     public partial class App : PrismApplication

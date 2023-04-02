@@ -15,13 +15,62 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.5" />
     <PackageReference Include="Prism.Unity.Forms" Version="8.1.97" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2578" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ViewModels\" />
     <None Remove="Views\" />
+    <None Remove="Models\" />
+    <None Remove="Theming\" />
+    <None Remove="Resources\" />
+    <None Remove="Resources\Lato-Black.ttf" />
+    <None Remove="Resources\Lato-BlackItalic.ttf" />
+    <None Remove="Resources\Lato-Bold.ttf" />
+    <None Remove="Resources\Lato-BoldItalic.ttf" />
+    <None Remove="Resources\Lato-Hairline.ttf" />
+    <None Remove="Resources\Lato-HairlineItalic.ttf" />
+    <None Remove="Resources\Lato-Heavy.ttf" />
+    <None Remove="Resources\Lato-HeavyItalic.ttf" />
+    <None Remove="Resources\Lato-Italic.ttf" />
+    <None Remove="Resources\Lato-Light.ttf" />
+    <None Remove="Resources\Lato-LightItalic.ttf" />
+    <None Remove="Resources\Lato-Medium.ttf" />
+    <None Remove="Resources\Lato-MediumItalic.ttf" />
+    <None Remove="Resources\Lato-Regular.ttf" />
+    <None Remove="Resources\Lato-Semibold.ttf" />
+    <None Remove="Resources\Lato-SemiboldItalic.ttf" />
+    <None Remove="Resources\Lato-Thin.ttf" />
+    <None Remove="Resources\Lato-ThinItalic.ttf" />
+    <None Remove="Animations\" />
+    <None Remove="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
+    <Folder Include="Models\" />
+    <Folder Include="Theming\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Animations\" />
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Lato-Black.ttf" />
+    <EmbeddedResource Include="Resources\Lato-BlackItalic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Lato-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Hairline.ttf" />
+    <EmbeddedResource Include="Resources\Lato-HairlineItalic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Heavy.ttf" />
+    <EmbeddedResource Include="Resources\Lato-HeavyItalic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Light.ttf" />
+    <EmbeddedResource Include="Resources\Lato-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Lato-MediumItalic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Semibold.ttf" />
+    <EmbeddedResource Include="Resources\Lato-SemiboldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Lato-Thin.ttf" />
+    <EmbeddedResource Include="Resources\Lato-ThinItalic.ttf" />
   </ItemGroup>
 </Project>

@@ -2,9 +2,54 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:control="clr-namespace:imagegallery.Controls"
+    BackgroundColor="{StaticResource PrimaryBackground}"
     x:Class="imagegallery.Views.LoginPage">
     <ContentPage.Content>
-        
+        <Grid
+            RowDefinitions="3*, *, 2*">
+            <StackLayout
+                Spacing="50"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Row="0">
+                <Image
+                    Source="home_icon.png"
+                    VerticalOptions="Start"
+                    HorizontalOptions="CenterAndExpand"
+                    HeightRequest="150"
+                    WidthRequest="150" />
+                <Label
+                    FontFamily="Light"
+                    FontSize="40"
+                    TextColor="{StaticResource PrimaryTextColour}"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Image Gallery" />
+            </StackLayout>
+            <Entry
+                BackgroundColor="Transparent"
+                PlaceholderColor="White"
+                TextColor="White"
+                Grid.Row="1"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="60"
+                WidthRequest="250"
+                FontFamily="Light"
+                Text="{Binding LoginCode}"
+                Placeholder="Encryption Code">
+                <Entry.Visual>
+                    <OnPlatform
+                        Android="Default"
+                        iOS="Material" />
+                </Entry.Visual>
+            </Entry>
+            <control:PillButtonControl
+                Command="{Binding LoginCommand}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Row="2"
+                Text="Login" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
-
