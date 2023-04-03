@@ -2,9 +2,130 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:controls="clr-namespace:imagegallery.Controls"
+    xmlns:viewModel="clr-namespace:imagegallery.ViewModels"
     BackgroundColor="{StaticResource PrimaryBackground}"
     x:Class="imagegallery.Views.GalleryPage">
-    <ContentPage.Content>
-    </ContentPage.Content>
-</ContentPage>
+    <Grid
+        RowDefinitions="50,*">
+        <ImageButton
+            BackgroundColor="Transparent"
+            Grid.Row="0"
+            Command="{prism:NavigateTo 'DetailedImagePage'}"
+            Margin="20,0"
+            HeightRequest="32"
+            WidthRequest="32"
+            Aspect="AspectFit"
+            VerticalOptions="Center"
+            HorizontalOptions="EndAndExpand"
+            Source="addimage_icon.png" />
+        <StackLayout
+            Grid.Row="1"
+            Padding="10"
+            VerticalOptions="CenterAndExpand">
+            <CarouselView
+                x:Name="CarouselView"
+                Loop="False"
+                ItemsSource="{Binding ImagesSource}"
+                IndicatorView="indicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            RowSpacing="10"
+                            Margin="10"
+                            RowDefinitions="*, Auto,Auto,Auto,Auto">
+                            <Image
+                                HeightRequest="500"
+                                Aspect="AspectFit"
+                                VerticalOptions="Center"
+                                Grid.Row="0"
+                                Source="{Binding ImageSource}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding ItemTapCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <StackLayout
+                                InputTransparent="True"
+                                Grid.Row="1">
+                                <Label
+                                    InputTransparent="True"
+                                    FontFamily="Bold"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Start"
+                                    Text="Description:" />
+                                <Label
+                                    InputTransparent="True"
+                                    FontFamily="Light"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding Description}" />
+                            </StackLayout>
+                            <StackLayout
+                                InputTransparent="True"
+                                Grid.Row="2">
+                                <Label
+                                    InputTransparent="True"
+                                    FontFamily="Bold"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Start"
+                                    Text="Annotations:" />
+                                <Label
+                                    InputTransparent="True"
+                                    FontFamily="Light"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding Annotations}" />
+                            </StackLayout>
+                            <Label
+                                InputTransparent="True"
+                                Grid.Row="3"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="Start">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                            FontFamily="Bold"
+                                            TextColor="White"
+                                            FontSize="14"
+                                            Text="Created on: " />
+                                        <Span
+                                            FontFamily="Light"
+                                            TextColor="White"
+                                            FontSize="14"
+                                            Text="{Binding DateCreated}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <controls:PillButtonControl
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:GalleryPageViewModel}}, Path=ItemTapCommand}"
+                                CommandParameter="{Binding .}"
+                                Margin="10"
+                                WidthRequest="150"
+                                Text="Get Details"
+                                Grid.Row="4" />
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView
+                x:Name="indicatorView"
+                IndicatorColor="Gray"
+                SelectedIndicatorColor="{StaticResource SecondaryBackgroundColour}"
+                IndicatorsShape="Square" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

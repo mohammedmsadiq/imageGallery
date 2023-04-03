@@ -16,11 +16,12 @@
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.5" />
     <PackageReference Include="Prism.Unity.Forms" Version="8.1.97" />
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2578" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ViewModels\" />
     <None Remove="Views\" />
-    <None Remove="Models\" />
     <None Remove="Theming\" />
     <None Remove="Resources\" />
     <None Remove="Resources\Lato-Black.ttf" />
@@ -47,7 +48,6 @@
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
-    <Folder Include="Models\" />
     <Folder Include="Theming\" />
     <Folder Include="Resources\" />
     <Folder Include="Animations\" />

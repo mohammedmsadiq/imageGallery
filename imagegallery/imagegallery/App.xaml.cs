@@ -1,4 +1,8 @@
 ﻿using System;
+using imagegallery.Helpers;
+using imagegallery.Interfaces;
+using imagegallery.Models;
+using imagegallery.Services;
 using imagegallery.ViewModels;
 using imagegallery.Views;
 using Prism;
@@ -37,7 +41,8 @@ namespace imagegallery
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync("LoginPage");
+            DBHelper.InitializeDatabase();
+            NavigationService.NavigateAsync("GalleryPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -46,6 +51,10 @@ namespace imagegallery
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<GalleryPage, GalleryPageViewModel>();
             containerRegistry.RegisterForNavigation<DetailedImagePage, DetailedImagePageViewModel>();
+            containerRegistry.RegisterForNavigation<ImageDetailPage, ImageDetailPageViewModel>();
+
+            containerRegistry.RegisterSingleton<IImageService, ImageService>();
+            containerRegistry.RegisterSingleton<IDBService<ImageModel>, DBService<ImageModel>>();
         }
 
         protected override void OnStart()

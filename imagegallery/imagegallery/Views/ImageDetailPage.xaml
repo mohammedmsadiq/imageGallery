@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:imagegallery.Controls"
+    BackgroundColor="{StaticResource PrimaryBackground}"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
+    xmlns:prism="http://prismlibrary.com"
+    x:Class="imagegallery.Views.ImageDetailPage">
+    <Grid
+        RowSpacing="10"
+        Margin="10"
+        RowDefinitions="50,*, Auto,Auto,Auto">
+        <ImageButton
+            BackgroundColor="Transparent"
+            Grid.Row="0"
+            Command="{prism:NavigateTo 'GalleryPage'}"
+            Margin="20,0,0,0"
+            HeightRequest="32"
+            WidthRequest="32"
+            Aspect="AspectFit"
+            VerticalOptions="Center"
+            HorizontalOptions="StartAndExpand"
+            Source="leftarrow_icon.png" />
+        <Image
+            Aspect="AspectFit"
+            VerticalOptions="Center"
+            Grid.Row="1"
+            Source="{Binding ImageItem.ImageSource}" />
+        <StackLayout
+            Grid.Row="2">
+            <Label
+                FontFamily="Bold"
+                TextColor="White"
+                FontSize="14"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                Text="Description:" />
+            <Editor
+                FontFamily="Light"
+                Placeholder="Annotations"
+                Visual="Material"
+                TextColor="White"
+                FontSize="14"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                Text="{Binding ImageItem.Description}" />
+        </StackLayout>
+        <StackLayout
+            Grid.Row="3">
+            <Label
+                FontFamily="Bold"
+                TextColor="White"
+                FontSize="14"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                Text="Annotations:" />
+            <Editor
+                FontFamily="Light"
+                TextColor="White"
+                Placeholder="Annotations"
+                Visual="Material"
+                FontSize="14"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                Text="{Binding ImageItem.Annotations}" />
+        </StackLayout>
+        <StackLayout
+            Grid.Row="4">
+            <controls:PillButtonControl
+                Margin="10"
+                WidthRequest="250"
+                HorizontalOptions="Center"
+                Command="{Binding SaveCommand}"
+                Text="Save" />
+            <controls:PillButtonControl
+                Margin="10"
+                WidthRequest="250"
+                HorizontalOptions="Center"
+                Command="{Binding DeleteCommand}"
+                Text="Delete" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
+

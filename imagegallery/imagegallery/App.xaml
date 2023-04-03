@@ -6,11 +6,14 @@
     xmlns:styling="clr-namespace:imagegallery.Theming"
     xmlns:prism1="http://xamarin.com/schemas/2014/forms"
     xmlns:prism2="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:converter="clr-namespace:imagegallery.Converters"
     x:Class="imagegallery.App">
     <prism:PrismApplication.Resources>
         <ResourceDictionary>
+            <converter:ByteToImageSourceConverter
+                x:Key="ByteToImageSourceConverter" />
             <ResourceDictionary.MergedDictionaries>
-                <styling:ColourPalette/>
+                <styling:ColourPalette />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </prism:PrismApplication.Resources>
