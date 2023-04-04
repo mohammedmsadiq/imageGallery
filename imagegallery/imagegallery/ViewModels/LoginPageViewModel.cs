@@ -10,7 +10,7 @@ namespace imagegallery.ViewModels
 {
     public class LoginPageViewModel : ViewModelBase
     {
-        private string passCode = "GameLearn";
+        private string passCode = "Password123";
         public DelegateCommand LoginCommand { get; set; }
 
         public LoginPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeviceService deviceService, IEventAggregator eventAggregator) : base(navigationService, pageDialogService, deviceService, eventAggregator)
