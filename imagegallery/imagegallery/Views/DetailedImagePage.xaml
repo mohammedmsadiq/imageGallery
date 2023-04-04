@@ -51,28 +51,40 @@
                     IsVisible="{Binding HasImageData}"
                     Text="{Binding Description}"
                     PlaceholderColor="White"
+                    BackgroundColor="Transparent"
                     Placeholder="Description"
-                    Visual="Material"
                     TextColor="White"
                     FontFamily="Light"
                     Margin="10,0"
                     IsTextPredictionEnabled="True"
                     HeightRequest="80"
                     VerticalOptions="EndAndExpand"
-                    HorizontalOptions="FillAndExpand" />
+                    HorizontalOptions="FillAndExpand" >
+                    <Editor.Visual>
+                        <OnPlatform
+                        Android="Default"
+                        iOS="Material" />
+                    </Editor.Visual>
+                </Editor>
                 <Editor
                     IsVisible="{Binding HasImageData}"
                     Text="{Binding Annotations}"
                     PlaceholderColor="White"
+                    BackgroundColor="Transparent"
                     Placeholder="Annotations"
-                    Visual="Material"
                     TextColor="White"
                     FontFamily="Light"
                     Margin="10,0"
                     IsTextPredictionEnabled="True"
                     HeightRequest="80"
                     VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand" />
+                    HorizontalOptions="FillAndExpand" >
+                    <Editor.Visual>
+                        <OnPlatform
+                        Android="Default"
+                        iOS="Material" />
+                    </Editor.Visual>
+                </Editor>
             </StackLayout>
             <control:PillButtonControl
                 Command="{Binding SaveCommand}"

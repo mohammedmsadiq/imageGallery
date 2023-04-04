@@ -44,8 +44,14 @@
                 TextColor="White"
                 FontSize="14"
                 VerticalOptions="Start"
-                HorizontalOptions="Start"
-                Text="{Binding ImageItem.Description}" />
+                HorizontalOptions="StartAndExpand"
+                Text="{Binding ImageItem.Description}">
+                <Editor.Visual>
+                    <OnPlatform
+                        Android="Default"
+                        iOS="Material" />
+                </Editor.Visual>
+            </Editor>
         </StackLayout>
         <StackLayout
             Grid.Row="3">
@@ -63,8 +69,14 @@
                 Visual="Material"
                 FontSize="14"
                 VerticalOptions="Start"
-                HorizontalOptions="Start"
-                Text="{Binding ImageItem.Annotations}" />
+                HorizontalOptions="StartAndExpand"
+                Text="{Binding ImageItem.Annotations}" >
+                <Editor.Visual>
+                    <OnPlatform
+                        Android="Default"
+                        iOS="Material" />
+                </Editor.Visual>
+            </Editor>
         </StackLayout>
         <StackLayout
             Grid.Row="4">

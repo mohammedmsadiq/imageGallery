@@ -42,7 +42,7 @@ namespace imagegallery
         {
             InitializeComponent();
             DBHelper.InitializeDatabase();
-            NavigationService.NavigateAsync("GalleryPage");
+            NavigationService.NavigateAsync("LoginPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

@@ -42,14 +42,7 @@
                                 Aspect="AspectFit"
                                 VerticalOptions="Center"
                                 Grid.Row="0"
-                                Source="{Binding ImageSource}">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                        Command="{Binding ItemTapCommand}"
-                                        CommandParameter="{Binding .}" />
-                                </Image.GestureRecognizers>
-                            </Image>
-
+                                Source="{Binding ImageSource}"/>
                             <StackLayout
                                 InputTransparent="True"
                                 Grid.Row="1">
